@@ -92,15 +92,16 @@ and training experiments are dumped here in a structured way.
   - **[templates](./research/templates)** (Python/Notebooks): Refactored Notebooks that are reusable for a specific task (e.g. model training, data exploration). Notebooks should be refactored, documented, not contain any output, and use the following naming schema: `short-description`. If you like to make use of a template Notebook, duplicate the notebook into develop folder.
   
 - **[production](./production)**: The production-ready solution(s) composed of libraries, services, and jobs.
-  - **[jobs](./production/training-job)** (Python/Docker): Combines required data exports, preprocessing and training scripts into a Docker container. This makes results reproducible and the production model retrainable in _any_ ennvironment.
-    - training
-    - testing
-    - inference
-    - preprocessing
-  - **[services](./production/inference-service)** (Python/Docker): Docker container that provides the final model prediction capabilities via a REST API.
-  - **[tests](./production/tests)** (Python): tests for utils library
-  - **[tools](./production/tools)** (Python/Bash): any scripts usde for defined preprocessings, model launches, etc. 
-  - **[src](./production/src)** (Python): Production code and utility functions that are distilled from the research phase and used across multiple scripts. Should only contain refactored and tested Python scripts/modules. Installable via pip.
+  - **[jobs](./production/training-job/)** (Python/Docker): Combines required data exports, preprocessing and training scripts into a Docker container. This makes results reproducible and the production model retrainable in _any_ ennvironment.
+    - **[evaluation](./production/jobs/evaluation/)**: jobs for evaluation of models from model registry
+    - **[inference](./production/jobs/inference/)**: jobs for batch inference, e.g. the whole dataset or big batch of data
+    - **[processing](./production/jobs/processing/)**: jobs for other processing tasks, not using NN based approaches 
+    - **[training](./production/jobs/training/)**: jobs for training of the model
+    - **[job pipelines](./production/jobs/pipelines/)**: pipelines of the defined jobs
+  - **[services](./production/inference-service/)** (Python/Docker): Docker container that provides the final model prediction capabilities via a REST API.
+  - **[tests](./production/tests/)** (Python): tests for utils library
+  - **[tools](./production/tools/)** (Python/Bash): any scripts usde for defined preprocessings, model launches, etc. 
+  - **[src](./production/src/)** (Python): Production code and utility functions that are distilled from the research phase and used across multiple scripts. Should only contain refactored and tested Python scripts/modules. Installable via pip.
 
 ## Conventions
 
