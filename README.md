@@ -74,7 +74,6 @@ and training experiments are dumped here in a structured way.
 ### Static
 - **[assets](./assets)**: any assets that are used for `README.md` files and other
 - **[LICENSE](./LICENSE)**: license information
-- **[MANIFEST.in](./MANIFEST.in)**: metadata for building python distributable]
 - **[README.md](./README.md)**: top-level readme file with description of the repository and project
 
 ### Dynamic
@@ -103,7 +102,10 @@ and training experiments are dumped here in a structured way.
   - **[tools](./production/tools)** (Python/Bash): any scripts usde for defined preprocessings, model launches, etc. 
   - **[src](./production/src)** (Python): Production code and utility functions that are distilled from the research phase and used across multiple scripts. Should only contain refactored and tested Python scripts/modules. Installable via pip.
 
-## Naming Conventions
+## Conventions
+
+Delete corresponding `.gitkeep` files when commit into the directory.
+
 
 ### Code Artifacts
 
