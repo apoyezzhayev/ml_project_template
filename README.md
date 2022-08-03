@@ -103,9 +103,12 @@ and training experiments are dumped here in a structured way.
   - **[tools](./production/tools/)** (Python/Bash): any scripts usde for defined preprocessings, model launches, etc. 
   - **[src](./production/src/)** (Python): Production code and utility functions that are distilled from the research phase and used across multiple scripts. Should only contain refactored and tested Python scripts/modules. Installable via pip.
 
-## Conventions
-
-Delete corresponding `.gitkeep` files when commit into the directory.
+## Template usage:
+- Add LICENSE
+- Rename `production/src` to your project's name if necessary
+- Delete corresponding `.gitkeep` files when commit into the directory.
+- Delete `TODel` sections in README
+- Fill `TODO` sections
 
 
 ### Code Artifacts
