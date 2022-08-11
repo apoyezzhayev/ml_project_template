@@ -14,7 +14,23 @@ Typically, solving such task entails two main phases, _research_ and _production
 
 ## TOC
 
-Table of contents
+- [ML Project Template](#ml-project-template)
+  - [Project description](#project-description)
+  - [TOC](#toc)
+  - [Useful resources](#useful-resources)
+  - [[Features]](#features)
+  - [Installation guide](#installation-guide)
+    - [From source](#from-source)
+    - [[Docker]](#docker)
+  - [Building the documentation](#building-the-documentation)
+  - [Getting started](#getting-started)
+  - [License](#license)
+  - [Structure](#structure)
+  - [Repository Structure](#repository-structure)
+    - [Static](#static)
+    - [Dynamic](#dynamic)
+  - [Template usage](#template-usage)
+    - [Code Artifacts](#code-artifacts)
 
 ***
 

@@ -10,11 +10,11 @@ Scripts and Notebooks for experimentation.
 
 ## Structure
 
-- **[develop](./research/develop)** (Python/Notebooks): Experimental code to try out new ideas and experiments. Use Jupiter notebooks wherever you can. Naming convention: `{US_id}{task_id}_{YYYY-MM-DD}_{user_id}_{short-description}`. If you cannot use a single notebook and have multiple scripts/files for an experiment, create a folder with the same naming convention. Each file should be handled by one person only.
-- **[deliver](./research/deliver)** (Python/Notebooks): Refactored notebooks that contain valuable insights or results (e.g. visualizations, training runs). Notebooks should be refactored, documented, contain outputs, and use the following naming schema: `{US_id}_{date}_{short-description}`. Notebooks in deliver should not be changed or rerun. If you want to rerun a deliver Notebook, please duplicate it into the develop folder.
-   - **[runs](./research/deliver/runs)** (Python/Notebooks): Runs and visualizations of training/validation/inference tasks, if it was launched inside notebook (not as separate job)
+- **[develop](./develop)** (Python/Notebooks): Experimental code to try out new ideas and experiments. Use Jupiter notebooks wherever you can. Naming convention: `{US_id}{task_id}_{YYYY-MM-DD}_{user_id}_{short-description}`. If you cannot use a single notebook and have multiple scripts/files for an experiment, create a folder with the same naming convention. Each file should be handled by one person only.
+- **[deliver](./deliver)** (Python/Notebooks): Refactored notebooks that contain valuable insights or results (e.g. visualizations, training runs). Notebooks should be refactored, documented, contain outputs, and use the following naming schema: `{US_id}_{date}_{short-description}`. Notebooks in deliver should not be changed or rerun. If you want to rerun a deliver Notebook, please duplicate it into the develop folder.
+   - **[runs](./deliver/runs)** (Python/Notebooks): Runs and visualizations of training/validation/inference tasks, if it was launched inside notebook (not as separate job)
    - other types of tasks may be placed into the root of the directory
-- **[templates](./research/templates)** (Python/Notebooks): Refactored Notebooks that are reusable for a specific task (e.g. model training, data exploration). Notebooks should be refactored, documented, not contain any output, and use the following naming schema: `short-description`. If you like to make use of a template Notebook, duplicate the notebook into develop folder.
+- **[templates](./templates)** (Python/Notebooks): Refactored Notebooks that are reusable for a specific task (e.g. model training, data exploration). Notebooks should be refactored, documented, not contain any output, and use the following naming schema: `short-description`. If you like to make use of a template Notebook, duplicate the notebook into develop folder.
 
 ## Policies
 
