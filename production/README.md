@@ -1,13 +1,32 @@
 # Production
 
-This is the space for production code: tested Python libs, jobs and services.
+This is the space for production code: tested Python libs, jobs, services and tools
 
+## Structure
 
-## Develop
+- **[jobs](./training-job/)** (Python/Docker): Combines required data exports, preprocessing and training scripts into a Docker container. This makes results reproducible and the production model retrainable in _any_ ennvironment.
+  - **[evaluation](./jobs/evaluation/)**: jobs for evaluation of models from model registry
+  - **[inference](./jobs/inference/)**: jobs for batch inference, e.g. the whole dataset or big batch of data
+  - **[processing](./jobs/processing/)**: jobs for other processing tasks, not using NN based approaches 
+  - **[training](./jobs/training/)**: jobs for training of the model
+  - **[job pipelines](./jobs/pipelines/)**: pipelines of the defined jobs
+- **[services](./inference-service/)** (Python/Docker): Docker container that provides the final model prediction capabilities via a REST API.
+- **[tests](./production/tests/)** (Python): tests for utils library
+- **[tools](./production/tools/)** (Python/Bash): any scripts usde for defined preprocessings, model launches, etc. 
+- **[src](./production/src/)** (Python): Production code and utility functions that are distilled from the research phase and used across multiple scripts. Should only contain refactored and tested Python scripts/modules. Installable via pip.
 
-### Requirements
+## Installation
 
-- Python 3, Docker
+### Build package
+
+Steps for installation and requirements:
+
+1) Git clone
+2) Install system packages: `install.sh`
+3) Optionally install python-packages: `requirements.txt` | `conda_env.yaml`
+4) Set-up necessary env variables
+5) Other set-up steps
+6) `pip install -e .`
 
 ### Docker Build
 
@@ -17,21 +36,19 @@ Execute this command in the project root folder to build this project and the re
 python build.py
 ```
 
-This script compiles the project, assembles the various JAR artifacts (executable service, client, sources) and builds a docker container with the assembled executable jar. For additional script options:
+This script compiles the project, assembles the various artifacts (executable service, client, sources) and builds a docker container with the assembled executables.
+
+ For additional script options:
 
 ```bash
 python build.py --help
 ```
 
-To only compile the Java artifacts (for development):
+## Deploy
 
-```bash
-mvn clean package
-```
+Execute this command in the project root folder to deploy all assembled artifacts to our repository and push all docker images to the configured docker registry:
 
-### Deploy
-
-Execute this command in the project root folder to deploy all assembled Java artifacts to the configured maven repository and push all docker containers to the configured docker registry:
+Describe here build and run arguments and corresponding config files
 
 ```bash
 python build.py --deploy --version={MAJOR.MINOR.PATCH-TAG}
@@ -43,23 +60,21 @@ For deployment, the version has to be provided. The version format should follow
 python build.py --help
 ```
 
-#### Configure Docker Repository
+### Configure Docker Repository
 
 ```bash
 docker login docker-repository
 ```
 
-### Dev Guidelines
+## Dev Guidelines
 
-#### Code Style
+### Code Style
 
-Our coding guideline for source code in the Java is based on the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html). For any code-style related questions, please refer to the [linked guide](https://google.github.io/styleguide/javaguide.html).
+Our coding guideline for source code are described [here](https://youtrack.netvision-internal.ru/articles/DSD-A-60/TODO:-Code-style)
 
-We also have predefined code formatting settings for IntelliJ which can be downloaded [here](https://sap-my.sharepoint.com/personal/lukas_masuch_sap_com/_layouts/15/guestaccess.aspx?guestaccesstoken=X00sJxNAAJv9lTRnUX2zfJ2iDo7YGyoqmLAS%2bYS68W4%3d&docid=2_114ced53bd3d94684ab15521e206b4343&rev=1) (add .jar as extension as OneDrive doesn’t allow uploading jar files).
+### Git Workflow
 
-#### Git Workflow
-
-Our git branching for all repositories is based on the [Git-Flow standard](https://datasift.github.io/gitflow/IntroducingGitFlow.html). Please go trough the [linked introduction](https://datasift.github.io/gitflow/IntroducingGitFlow.html), and visit [here](http://nvie.com/posts/a-successful-git-branching-model) and [here](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for more information.
+Our git branching for all repositories is based on [these](https://youtrack.netvision-internal.ru/articles/DSD-A-44/Development-common-practices) guidelines.
 
 #### Build Versioning
 
