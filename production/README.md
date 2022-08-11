@@ -4,7 +4,7 @@ This is the space for production code: tested Python libs, jobs, services and to
 
 ## Structure
 
-- **[jobs](./training-job/)** (Python/Docker): Combines required data exports, preprocessing and training scripts into a Docker container. This makes results reproducible and the production model retrainable in _any_ ennvironment.
+- **[jobs](./training-job/)** (Python/Docker): Combines required data exports, preprocessing and training scripts into a Docker container. This makes results reproducible and the production model retrainable in _any_ environment.
   - **[evaluation](./jobs/evaluation/)**: jobs for evaluation of models from model registry
   - **[inference](./jobs/inference/)**: jobs for batch inference, e.g. the whole dataset or big batch of data
   - **[processing](./jobs/processing/)**: jobs for other processing tasks, not using NN based approaches 
@@ -12,7 +12,7 @@ This is the space for production code: tested Python libs, jobs, services and to
   - **[job pipelines](./jobs/pipelines/)**: pipelines of the defined jobs
 - **[services](./inference-service/)** (Python/Docker): Docker container that provides the final model prediction capabilities via a REST API.
 - **[tests](./production/tests/)** (Python): tests for utils library
-- **[tools](./production/tools/)** (Python/Bash): any scripts usde for defined preprocessings, model launches, etc. 
+- **[tools](./production/tools/)** (Python/Bash): any scripts used for defined preprocessings, model launches, etc.
 - **[src](./production/src/)** (Python): Production code and utility functions that are distilled from the research phase and used across multiple scripts. Should only contain refactored and tested Python scripts/modules. Installable via pip.
 
 ## Installation
@@ -78,4 +78,4 @@ Our git branching for all repositories is based on [these](https://youtrack.netv
 
 #### Build Versioning
 
-Our build versioning for all projects is based on the [Semantic Versioning specification](https://semver.org/). For any versioning-related questions, please refer to the [linked guide](https://semver.org/). In additon to the MAJOR.MINOR.PATCH format, a `SNAPSHOT` tag will be attached to the version for all development builds (based on the [Maven versioning standard](https://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm)). As define in  Git-Flow, the build version is also used as tag for releases on the master branch.
+Our build versioning for all projects is based on the [Semantic Versioning specification](https://semver.org/). For any versioning-related questions, please refer to the [linked guide](https://semver.org/). In addition to the MAJOR.MINOR.PATCH format, a `SNAPSHOT` tag will be attached to the version for all development builds (based on the [Maven versioning standard](https://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm)). As define in  Git-Flow, the build version is also used as tag for releases on the master branch.

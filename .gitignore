@@ -4,6 +4,9 @@ data/raw/*
 data/tmp/*
 !*.gitkeep
 
+# IDE
+.vscode/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
