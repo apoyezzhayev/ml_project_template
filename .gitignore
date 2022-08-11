@@ -1,3 +1,4 @@
+# TODO: add other gitignores
 # Data
 data/processed/*
 data/raw/*
