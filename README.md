@@ -1,20 +1,41 @@
-# ML Project Template
-
-#TODel: This repository contains a template project that can be easily adapted for all kinds of Machine Learning tasks. 
-Typically, solving such task entails two main phases, _research_ and _production_ with very different focuses. The template intends to facilitate work on ML projects by guiding practitioners to adopt some best practices. It is recommended to simply clone this repo and customize it to the specific use-case at hand.
-
-***
+# Road distress estimation
 
 ## Project description
 
-#TODO:
-- Overview
-- Goal
-- Problems
+### Goal
+
+#TODO
+
+Road distress estimation system allows to estimate the overall PCI (pavement condition index) for a driveway captured on video.
+It should be noted that the PCI calculation supports only several types of distresses for now:
+
+- Cracks:
+  - Longitudinal cracks
+  - Transverse cracks
+  - Edge cracks
+  - Alligator cracks
+  - Blocking cracks
+- Potholes
+
+The main pipeline for distresses estimation:
+
+1. Find semantic segmentation mask for all distresses present on a frame
+2. Separate distresses on instances
+3. Classify the type of a distress
+4. Classify severity of a distress
+5. Measure distress's metrics
+6. Aggregate statistics gathered from every frame for the whole driveway
+7. Calculate PCI
+
+The overall [diagram](https://miro.com/app/board/uXjVOhUB4q4=/?share_link_id=343164846007) of an architecture.
+
+### Problems
+
+#TODO
 
 ## TOC
 
-- [ML Project Template](#ml-project-template)
+- [Road distress estimation](#road-distress-estimation)
   - [Project description](#project-description)
   - [TOC](#toc)
   - [Useful resources](#useful-resources)
@@ -36,13 +57,12 @@ Typically, solving such task entails two main phases, _research_ and _production
 
 ## Useful resources
 
-#TODO:
-- Wiki article of the project in knowledge base
-- S3 bucket of the project
-- Experiment manager project
-- NFS/Google disk, etc.
-- Diagrams folder of the project
-- Other docs
+- [Wiki article](https://youtrack.netvision-internal.ru/articles/DSD-A-13/Road-Defects-Segmentation) of the project in a knowledge base
+- S3 bucket of the project #TODO
+- Experiment manager project #TODO
+- NFS/Google disk, etc. #TODO
+- Diagrams folder of the project #TODO
+- Other docs #TODO
 
 ***
 

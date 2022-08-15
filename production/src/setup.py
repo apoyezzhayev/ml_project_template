@@ -11,14 +11,14 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'utils'
-MAIN_PACKAGE = 'utils'  # Change if main package != NAME
-DESCRIPTION = 'Utility functionality for training.'
-URL = ''
-EMAIL = 'oliver.atanaszov@gmail.com'
-AUTHOR = 'Oliver Atanaszov'
-REQUIRES_PYTHON = '>=3.6'
-VERSION = None  # Only set version if you like to overwrite the version in __version__.py
+NAME = 'rda'
+MAIN_PACKAGE = 'rda'  # Change if main package != NAME
+DESCRIPTION = 'Road distress estimation system'
+URL = 'https://gitlab.netvision-internal.ru/ds/road-defects-analytics/road_distress_estimation'
+EMAIL = 'a.poyezzhayev@materria.io'
+AUTHOR = 'Materria'
+REQUIRES_PYTHON = '>=3.9'
+VERSION = '0.0.1'  # Only set version if you like to overwrite the version in __version__.py
 
 # Please define the requirements within the requirements.txt
 
@@ -28,7 +28,7 @@ VERSION = None  # Only set version if you like to overwrite the version in __ver
 # If you do change the License, remember to change the Trove Classifier for that!
 
 # Check if version is right
-if sys.version_info[:1] == 2 or (sys.version_info[:1] == 3 and sys.version_info[:2] < (3, 6)):
+if sys.version_info[:1] == 2 or (sys.version_info[:1] == 3 and sys.version_info[:2] < (3, 9)):
     raise Exception('This package needs Python 3.6 or later.')
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -68,7 +68,7 @@ setup(
     include_package_data=True,
     classifiers=[
         # TODO: update this list to match your application: https://pypi.python.org/pypi?%3Aaction=list_classifiers
-        'Development Status :: 4 - Beta',
+        'Development Status :: 2 Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
